@@ -35,5 +35,14 @@
       <br /><br />
       <button type="button">download CSV</button>
     </div>
+    <script>
+      const data = Array.from(document.getElementsByTagName("tr"))
+        .map((row) =>
+          Array.from(row.querySelectorAll("td,th"))
+            .map((tdth) => tdth.innerHTML)
+            .join(",")
+        )
+        .join("\n");
+    </script>
   </body>
 </html>
